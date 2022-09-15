@@ -1,3 +1,5 @@
+// Example of a Class programming
+
 #include <iostream>
 #include <string>
 using std::string;
