@@ -13,7 +13,7 @@ class Car{
         void IncrementDistance(){
             distance++;
         }
-
+        // Constructor 
         Car(string c, int n){
             color = c;
             number = n;
