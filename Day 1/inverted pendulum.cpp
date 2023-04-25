@@ -36,11 +36,24 @@ main( )
         }
     }
 
-    double x_init[4][1] = {{0},{0},{M_PI/2},{0}};
+    double x_init[4][1] = {{0},{0},{3.14/2},{0}};
     double x_next[4][1];
     int tend = 1;
     float time = tend/dt;
 
+
+    for(int i= 0; i<4; i++){
+        for(int j=0; j<1; j++){
+            for (int k=0; k < 4; ++k)
+            {
+                x_next[i][j] += A[i][k]*x_init[k][j];
+            }
+        }
+    }
+
+
+
+/***
     for(int t=0;t<time; t++){
         for(int i= 0; i<4; i++){
             for(int j=0; j<4; j++){
@@ -52,7 +65,7 @@ main( )
             }
         }
     }
-
+***/
 //    /***
 	cout<<"Printing a 2D Array:\n";
 	for(int i=0;i<4;i++)
