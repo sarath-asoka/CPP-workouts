@@ -1,5 +1,7 @@
 #include<iostream>
 #include<cmath>
+#include <cstdlib>
+
 using namespace std;
 
 void c2d(double A[4][4], double Anew[4][4]);
@@ -24,19 +26,16 @@ int main(){
     
     double x_init[4][1] = {{0},{0},{3.14/2},{0}};
     double K[1][4] = {-1, -1.6567, 18.6854, 3.4594};
-    cout<< x_init[2][0];
-    for (int t = 0; t<157; t++){
+    int t = 1;
+
+    while (abs(x_init[2][0])>0.0001)
+    {
         double x_next[4][1] ={{0},{0},{0},{0}};
         x_new(x_init,Anew,x_next,Bnew,K);    
         update_init(x_init,x_next);
-        // cout << "Error :" << x_next[2][0] <<endl;
-        // cout << endl<< "Next state : "<<t<<endl;
-/*         for (int i=0;i<4;i++){
-            for (int j=0;j<1;j++){
-                cout << x_next[i][j] <<" ";
-        }
-        }
-        cout << endl; */
+        cout << "steps :"<< t << "||" << x_init[2][0] << endl;
+        ++t;
+
     }
     return 0;
 }
